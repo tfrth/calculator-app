@@ -34,15 +34,10 @@ class ViewController: UIViewController {
             enter()
         }
         switch operation {
-            case "×":
-                if operandStack.count >= 2 {
-                    displayValue = operandStack.removeLast() * operandStack.removeLast()
-                        enter()
-            }
-
-//            case "÷":
-//            case "+":
-//            case "−":
+            case "×": performOperation { $0 * $1 }
+            case "÷": performOperation { $1 / $0 }
+            case "+": performOperation { $0 + $1 }
+            case "−": performOperation { $1 - $0 }
             default: break
 
             
@@ -57,21 +52,21 @@ class ViewController: UIViewController {
     
     //performOperation function is allowing us to condense operation into one function since all operators are very similar in that they take two doubles and return another double.
     
-    func multiply(op1: Double, op2: Double) -> Double {  //multiply bit
-        return op1 * op2
-    }
-    
-    func divide(op1: Double, op2: Double) -> Double {  //divide bit
-        return op1 / op2
-    }
-    
-    func add(op1: Double, op2: Double) -> Double {  //add bit
-        return op1 + op2
-    }
-    
-    func subtract(op1: Double, op2: Double) -> Double {  //subtract bit
-        return op1 - op2
-    }
+//    func multiply(op1: Double, op2: Double) -> Double {  //multiply bit
+//        return op1 * op2
+//    }
+//    
+//    func divide(op1: Double, op2: Double) -> Double {  //divide bit
+//        return op1 / op2
+//    }
+//    
+//    func add(op1: Double, op2: Double) -> Double {  //add bit
+//        return op1 + op2
+//    }
+//    
+//    func subtract(op1: Double, op2: Double) -> Double {  //subtract bit
+//        return op1 - op2
+//    }
     
     var operandStack = Array<Double>() //var can infer type from value i.e Array<Double>
     @IBAction func enter() {
