@@ -25,8 +25,54 @@ class ViewController: UIViewController {
             userIsInTheMiddleOfTypingANumber = true
         }
        
-//        print("digit = \(digit)")
     }
+    
+  
+    @IBAction func operate(sender: UIButton) {
+        let operation = sender.currentTitle!
+        if userIsInTheMiddleOfTypingANumber {
+            enter()
+        }
+        switch operation {
+            case "×":
+                if operandStack.count >= 2 {
+                    displayValue = operandStack.removeLast() * operandStack.removeLast()
+                        enter()
+            }
+
+//            case "÷":
+//            case "+":
+//            case "−":
+            default: break
+
+            
+        }
+    }
+    
+    func performOperation(operation: (Double, Double) -> Double) {
+        if operandStack.count >= 2 {
+            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
+        }
+    }
+    
+    //performOperation function is allowing us to condense operation into one function since all operators are very similar in that they take two doubles and return another double.
+    
+    func multiply(op1: Double, op2: Double) -> Double {  //multiply bit
+        return op1 * op2
+    }
+    
+    func divide(op1: Double, op2: Double) -> Double {  //divide bit
+        return op1 / op2
+    }
+    
+    func add(op1: Double, op2: Double) -> Double {  //add bit
+        return op1 + op2
+    }
+    
+    func subtract(op1: Double, op2: Double) -> Double {  //subtract bit
+        return op1 - op2
+    }
+    
     var operandStack = Array<Double>() //var can infer type from value i.e Array<Double>
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
