@@ -12,6 +12,7 @@
 		CC293AB21C331C91001C684F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC293AB01C331C91001C684F /* Main.storyboard */; };
 		CC293AB41C331C92001C684F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC293AB31C331C92001C684F /* Assets.xcassets */; };
 		CC293AB71C331C92001C684F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC293AB51C331C92001C684F /* LaunchScreen.storyboard */; };
+		CCA393CE1C597F7400D81913 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA393CD1C597F7400D81913 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CC293AB31C331C92001C684F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC293AB61C331C92001C684F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC293AB81C331C92001C684F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCA393CD1C597F7400D81913 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				CC293AAC1C331C91001C684F /* AppDelegate.swift */,
 				CC293AAE1C331C91001C684F /* ViewController.swift */,
 				CC293AB01C331C91001C684F /* Main.storyboard */,
+				CCA393CD1C597F7400D81913 /* CalculatorBrain.swift */,
 				CC293AB31C331C92001C684F /* Assets.xcassets */,
 				CC293AB51C331C92001C684F /* LaunchScreen.storyboard */,
 				CC293AB81C331C92001C684F /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCA393CE1C597F7400D81913 /* CalculatorBrain.swift in Sources */,
 				CC293AAF1C331C91001C684F /* ViewController.swift in Sources */,
 				CC293AAD1C331C91001C684F /* AppDelegate.swift in Sources */,
 			);
@@ -286,6 +290,7 @@
 				CC293ABD1C331C92001C684F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
