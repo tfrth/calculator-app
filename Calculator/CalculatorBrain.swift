@@ -48,10 +48,11 @@ class CalculatorBrain {
         if !ops.isEmpty {
             var remainingOps = ops    //makes copy of ops to be mutable array to work with
             let op = remainingOps.removeLast()
-            switch op {
+            
+            switch op {                   //how you pull associated values  out of enum
             case .Operand(let operand):
                 return (operand, remainingOps)
-            case .UnaryOperation (_, let operation):
+            case .UnaryOperation (_, let operation):           //_ to ignore
                 let operandEvaluation = evaluate(remainingOps)
                 if let operand = operandEvaluation.result {
                     return (operation(operand), operandEvaluation.remainingOps)
@@ -69,8 +70,14 @@ class CalculatorBrain {
         return (nil, ops)   //default return nil if ops IS empty
     }
     
+//    func clear() -> Double! {
+//        opStack.removeAll()
+//        return evaluate()
+//    }
+//    
     func evaluate() -> Double? {  //must be an optional b/c nil may need to be returned (ie someone just enters in + but no operands)
-        let (result, _) = evaluate(opStack)
+        let (result, remainder) = evaluate(opStack)
+        print("\(opStack) = \(result) with \(remainder) left over")
         return result
     }
     

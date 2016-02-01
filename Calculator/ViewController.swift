@@ -14,10 +14,7 @@ class ViewController: UIViewController {
     
     var userIsInTheMiddleOfTypingANumber: Bool = false
     
-    var brain = CalculatorBrain()
-    
-    //creates instance of CalculatorBrain "
-    //"green arrow" that goes from the controller to the model
+    var brain = CalculatorBrain() //creates instance of CalculatorBrain " // "green arrow" that goes from the controller to the model
 
     @IBAction func appendDigit(sender: UIButton) {
         
@@ -33,11 +30,11 @@ class ViewController: UIViewController {
     }
     
 //    @IBOutlet weak var history: UILabel!  //not sure how to implement history label 
-    
+//    
     @IBAction func clear(sender: UIButton) {
         displayValue = 0;
-//        operandStack.removeAll();
-//        print(operandStack)
+//      brain.opStack = opStack.removeAll();
+       
     }
     
     @IBAction func operate(sender: UIButton) {
@@ -47,11 +44,11 @@ class ViewController: UIViewController {
         if let operation = sender.currentTitle {
             if let result = brain.performOperation(operation) {
                 displayValue = result
-            }
         } else {
-            displayValue = 0
+            displayValue = 100
         }
     }
+}
     
    
     @IBAction func enter() {
@@ -69,7 +66,7 @@ class ViewController: UIViewController {
         }
         set {
             display.text = "\(newValue)"
-            userIsInTheMiddleOfTypingANumber = false
+//            userIsInTheMiddleOfTypingANumber = false
         }
     }
     
