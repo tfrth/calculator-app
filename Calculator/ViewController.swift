@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 //    
     @IBAction func clear(sender: UIButton) {
         displayValue = 0;
-//      brain.opStack = opStack.removeAll();
+        brain.clear();
        
     }
     

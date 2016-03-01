@@ -70,11 +70,11 @@ class CalculatorBrain {
         return (nil, ops)   //default return nil if ops IS empty
     }
     
-//    func clear() -> Double! {
-//        opStack.removeAll()
-//        return evaluate()
-//    }
-//    
+    func clear() -> Double! {
+        opStack.removeAll()
+        return evaluate()
+    }
+    
     func evaluate() -> Double? {  //must be an optional b/c nil may need to be returned (ie someone just enters in + but no operands)
         let (result, remainder) = evaluate(opStack)
         print("\(opStack) = \(result) with \(remainder) left over")
