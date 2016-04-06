@@ -17,7 +17,7 @@ class CalculatorBrain {
         case UnaryOperation(String, Double -> Double)
         case BinaryOperation(String, (Double, Double) -> Double)
         
-        var description: String {
+        var description: String { //to return Ops as string (computed property)
             get {
                 switch self {
                 case .Operand(let operand):
@@ -36,11 +36,14 @@ class CalculatorBrain {
     private var knownOps = [String:Op]()          //creates a dictionary
     
     init() {                                        //initializer
-        knownOps["×"] = Op.BinaryOperation("×", *)
-        knownOps["÷"] = Op.BinaryOperation("÷") { $1 / $0 }
-        knownOps["+"] = Op.BinaryOperation("+", +)
-        knownOps["−"] = Op.BinaryOperation("−") { $1 - $0 }
-        knownOps["√"] = Op.UnaryOperation("√", sqrt)
+        func learnOp(op: Op) { //just makes things cleaner and allows us to use description string
+            knownOps[op.description] = op
+        }
+        learnOp(Op.BinaryOperation("×", *))
+        learnOp(Op.BinaryOperation("÷") { $1 / $0 })
+        learnOp(Op.BinaryOperation("+", +))
+        learnOp(Op.BinaryOperation("−") { $1 - $0 })
+        learnOp(Op.UnaryOperation("√", sqrt))
         
     }
     

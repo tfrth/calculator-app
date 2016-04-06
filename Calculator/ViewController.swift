@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             if let result = brain.performOperation(operation) {
                 displayValue = result
         } else {
-            displayValue = 100
+            displayValue = 0
         }
     }
 }
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         if let result = brain.pushOperand(displayValue) {
             displayValue = result
         } else {
-            displayValue = 0
+            displayValue = 0 //really want this to be able to be nil.. need displayValue to be an optional!
         }
     }
     
